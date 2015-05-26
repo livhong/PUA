@@ -4,6 +4,9 @@ public class Controller {
 	public static void peflop(){
 		int raiseCount =Status.peflopRaiseCount();
 		String type =Analyser.peflopType();
+		
+		//TODO 这里如果位置极好，对手过牌，则random几率直接peflopRaise("aggressive");
+		
 		switch (type) {
 		case "s5"://QQ+ AK
 			switch (raiseCount) {
