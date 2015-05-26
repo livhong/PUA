@@ -24,5 +24,20 @@ public class Action {
 		
 	}
 
+	public static void checkOrFold() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void call(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void raise(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

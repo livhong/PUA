@@ -7,7 +7,7 @@ public class Analyser {
 		// s5		QQ+ AK
 		// s4		TT+ AT+ KQ
 		// s3		55+ A7+ K9+ QJ
-		// s2		43-JT
+		// s2		65-JT
 		// s1		22+ A2+ K4+ Q6+ J8+
 		// medium	”–AKQ T+T+ J4+ T6+
 		// weak		»ı
