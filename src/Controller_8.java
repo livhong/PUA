@@ -2,6 +2,10 @@
 public class Controller_8 {
 	//这是8人桌的决策
 	//涉及随机的时候，small%约10%，medium%约30%，large%约50%
+	//再，涉及随机的时候，如果我的attitude是aggressive的，对手是passive的，则更多的raise
+	//如果我的attitude是passive的，对手是aggressive的，则更多的fold
+	//再。涉及随机的时候，如果对手紧，则peflop多raise，其他多fold，否则，peflop用更好的牌进，后面raise
+	//再，后面阶段三人时只做隔离raise
 	public static void peflop(){
 		int raiseCount =Status.peflopRaiseCount();
 		//没有体现下注额度，感觉以log2(pot/blind)来计算raiseCount，相当于自己raise自己call
@@ -10,7 +14,8 @@ public class Controller_8 {
 		//TODO 这里如果位置极好，对手过牌，则random几率直接peflopRaise("aggressive");
 		
 		switch (type) {
-		case "s5"://QQ+ AK
+		case "s5":
+			// s5		QQ+ AK AJs+
 			switch (raiseCount) {
 			case 1:
 			case 0:
@@ -21,7 +26,8 @@ public class Controller_8 {
 				break;
 			}
 			break;
-		case "s4"://TT+ AT+ KQ
+		case "s4":
+			// s4		TT+ AJ+ A9s+ KQs
 			switch (raiseCount) {
 			case 2:
 				Action.peflopCall("aggressive");
@@ -35,7 +41,8 @@ public class Controller_8 {
 				break;
 			}
 			break;
-		case "s3"://55+ A7+ K9+ QJ
+		case "s3":
+		// s3		55+ A9+ A7s+ KQ KTs+ QJs
 			switch (raiseCount) {
 			case 2:
 			case 1:
@@ -50,7 +57,8 @@ public class Controller_8 {
 				break;
 			}
 			break;
-		case "s2"://65-JT
+		case "s2":
+			// s2		65s-JTs
 			switch (raiseCount) {
 			case 2:
 				Action.peflopCheckOrFold();
@@ -68,7 +76,8 @@ public class Controller_8 {
 				break;
 			}
 			break;
-		case "s1"://22+ A2+ K4+ Q6+ J8+
+		case "s1":
+			// s1		22+ A4+ A2s+ K6+ K4s+ Q8+ Q6s+ JT+ J8s+
 			switch (raiseCount) {
 			case 1:
 				Action.peflopCheckOrFold();
@@ -83,6 +92,7 @@ public class Controller_8 {
 			}
 			break;
 		case "mideum":
+			// medium	有AKQ T+T+ J4+ J2s+ T6+ T8s+
 		case "weak":
 			Action.peflopCheckOrFold();
 			break;

@@ -11,7 +11,7 @@ public class Status {
 		return 0;
 	}
 
-	public static void setattitude(String attitude) {
+	public static void setMyAttitude(String attitude) {
 		// TODO Auto-generated method stub
 		
 	}

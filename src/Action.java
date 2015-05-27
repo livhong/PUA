@@ -1,20 +1,15 @@
 
 public class Action {
-	
-	
-	public static void peflopAllIn() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public static void peflopRaise(String attitude) {
-		Status.setattitude(attitude);
+		Status.setMyAttitude(attitude);
 		// TODO Auto-generated method stub
+		
 		
 	}
 
 	public static void peflopCall(String attitude) {
-		Status.setattitude(attitude);
+		Status.setMyAttitude(attitude);
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,15 +1,21 @@
 
 public class Analyser {
-
+	
+	
 	public static String peflopType() {
+		
+		//XXX 从status得到人数n，169/n的手牌是比较强的，可以从database拿数据
+		//这些牌的分成3份加到s5,s4,s3,然后按照下面的补漏，牌力只升不降（对于是否打太多牌不用担心）
+		
+		
 		// TODO Auto-generated method stub
 		// 在Status得到我的手牌，计算得出我的手牌强度
-		// s5		QQ+ AK
-		// s4		TT+ AT+ KQ
-		// s3		55+ A7+ K9+ QJ
-		// s2		65-JT
-		// s1		22+ A2+ K4+ Q6+ J8+
-		// medium	有AKQ T+T+ J4+ T6+
+		// s5		QQ+ AK AJs+
+		// s4		TT+ AJ+ A9s+ KQs
+		// s3		55+ A9+ A7s+ KQ KTs+ QJs
+		// s2		65s-JTs
+		// s1		22+ A4+ A2s+ K6+ K4s+ Q8+ Q6s+ JT+ J8s+
+		// medium	有AKQ T+T+ J4+ J2s+ T6+ T8s+
 		// weak		弱
 		return null;
 	}
