@@ -21,6 +21,7 @@ public class DataBase {
 	9As	18	20.64
 	QK	19	20.43
 	JA	20	20.04
+	
 	8As	21	20.03
 	99	22	19.96
 	5As	23	19.76

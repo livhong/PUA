@@ -1,5 +1,8 @@
 
 public class Controller_8 {
+	static double random_s=.1;
+	double random_m=.3;
+	double random_l=.5;
 	//这是8人桌的决策
 	//涉及随机的时候，small%约10%，medium%约30%，large%约50%
 	//再，涉及随机的时候，如果我的attitude是aggressive的，对手是passive的，则更多的raise
@@ -46,8 +49,8 @@ public class Controller_8 {
 			switch (raiseCount) {
 			case 2:
 			case 1:
-				Action.peflopCall("passive");
-				// small% Action.peflopCall("aggressive");
+				if(Math.random()<random_s) Action.peflopCall("aggressive");
+				else Action.peflopCall("passive");
 				break;
 			case 0:
 				Action.peflopRaise("aggressive");
@@ -61,12 +64,12 @@ public class Controller_8 {
 			// s2		65s-JTs
 			switch (raiseCount) {
 			case 2:
-				Action.peflopCheckOrFold();
-				// small% Action.peflopCall("passive");
+				if(Math.random()<random_s) Action.peflopCall("passive");
+				else Action.peflopCheckOrFold();
 				break;
 			case 1:
-				Action.peflopCall("passive");
-				// medium% Action.peflopCheckOrFold();
+				if(Math.random()<random_s) Action.peflopCheckOrFold();
+				else Action.peflopCall("passive");
 				break;
 			case 0:
 				Action.peflopRaise("aggressive");
@@ -80,8 +83,8 @@ public class Controller_8 {
 			// s1		22+ A4+ A2s+ K6+ K4s+ Q8+ Q6s+ JT+ J8s+
 			switch (raiseCount) {
 			case 1:
-				Action.peflopCheckOrFold();
-				// small% Action.peflopCall("passive");
+				if(Math.random()<random_s)  Action.peflopCall("passive");
+				else Action.peflopCheckOrFold();
 				break;
 			case 0:
 				Action.peflopCall("passive");
@@ -124,12 +127,12 @@ public class Controller_8 {
 			// s4		超对，顶对大踢（顶对大不大）
 			switch (raiseCount) {
 			case 2:
-				Action.call("aggressive");
-				// small% Action.call("passive");
+				if(Math.random()<random_s) Action.call("passive");
+				else Action.call("aggressive");
 				break;
 			case 1:
-				Action.raise("aggressive");
-				// small% Action.call("aggressive");
+				if(Math.random()<random_s) Action.call("aggressive");
+				else Action.raise("aggressive");
 				break;
 			case 0:
 				Action.raise("aggressive");
@@ -160,6 +163,10 @@ public class Controller_8 {
 			// s2		顶对小踢（顶对大不大），中对大踢，其他对
 			//				s2细分？
 			switch (raiseCount) {
+			case 2:
+				if(Math.random()<random_s) Action.call("passive");
+				else Action.checkOrFold();
+				break;
 			case 1:
 				Action.call("passive");
 				break;
@@ -173,15 +180,7 @@ public class Controller_8 {
 			break;
 		case "s1":
 			// s1		听牌
-			switch (raiseCount) {
-			case 1:
-			case 0:
-				Action.call("passive");
-				break;
-			default:
-				Action.checkOrFold();
-				break;
-			}
+			if(Status.canCall())Action.call("passive");
 			break;
 		case "mideum":
 		case "weak":
