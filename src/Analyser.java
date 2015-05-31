@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import com.pua.entity.Card;
+
 
 public class Analyser {
 	
